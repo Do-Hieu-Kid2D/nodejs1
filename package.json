@@ -1,0 +1,28 @@
+{
+    "name": "nodejs1",
+    "version": "1.0.0",
+    "description": "đây project đầu tiên về nodejs học trên hỏi dân it https://www.youtube.com/watch?v=SmyD61YnYXU&list=PLncHg6Kn2JT7vOvooGw-yXcj6MHKrOpTZ&index=11",
+    "main": "sever.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "watch": "nodemon",
+        "start": "nodemon --exec npx babel-node ./src/sever.js"
+        
+    },
+    "author": "DoHieu_learn",
+    "license": "ISC",
+    "dependencies": {
+        "@babel/core": "7.15.4",
+        "@babel/node": "7.15.4",
+        "body-parser": "1.19.1",
+        "dotenv": "10.0.0",
+        "ejs": "3.1.6",
+        "express": "4.17.2",
+        "nodemon": "2.0.12",
+        "supervisor": "^0.12.0"
+    },
+    "devDependencies": {
+        "@babel/cli": "^7.23.4",
+        "@babel/preset-env": "^7.23.5"
+    }
+}
