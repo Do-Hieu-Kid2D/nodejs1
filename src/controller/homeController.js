@@ -35,11 +35,12 @@ const handleDeleteUser = (req, res) => {
 
 const handleGetUpdateUserPage = async (req, res) => {
     let id = req.params.id;
-    let currentUser = await userServie.getUserByID(id);
-    let userData = {};
-    if (currentUser && currentUser.length > 0) {
-        userData = currentUser[0];
-    }
+    let userData = await userServie.getUserByID(id);
+    // Nếu dùng ORM nếu nó k data thì nó trả về user = {} lúc định nghĩa r nên k lo
+    // let userData = {};
+    // if (currentUser && currentUser.length > 0) {
+    //     userData = currentUser[0];
+    // }
     res.render("user-update.ejs", { userData });
 };
 

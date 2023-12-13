@@ -3,6 +3,7 @@ import configViewEngine from "./views/viewEngine";
 import initWebRouter from "./routers/web";
 require("dotenv").config();
 import bodyParser from "body-parser";
+import connection from "./config/connectDB";
 const app = express();
 
 // tạo views engine là cái để tạo ra html ??
@@ -12,6 +13,9 @@ configViewEngine(app);
 // congig body-parser
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extends: true }));
+
+// connect DB ORM
+connection();
 
 // khởi tạo webrouter là thằng điều hướng ??
 initWebRouter(app);
