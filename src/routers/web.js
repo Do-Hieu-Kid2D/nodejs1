@@ -3,14 +3,14 @@ import homeController from "../controller/homeController";
 
 const router = express.Router();
 
-const handerAbout = (req, res) => {
-    return res.send("<h1>About z</h1>");
-};
 const initWebRouters = (app) => {
     router.get("/", homeController.handleHomeHello);
-
-    router.get("/about", handerAbout);
     router.get("/user", homeController.handleUserPage);
+    router.post("/users/create-user", homeController.handleCreateNewUser);
+    // tham số động dùng dấu :
+    router.post("/delete-user/:id", homeController.handleDeleteUser);
+    router.get("/update-user/:id", homeController.handleGetUpdateUserPage);
+    router.post("/users/update-user/:id", homeController.handleUpdateUser);
 
     // khai báo này là app bắt đầu từ domain luôn
     return app.use("/", router);
